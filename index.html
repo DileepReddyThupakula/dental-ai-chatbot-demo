@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmileBright Dental | Austin, TX - AI-Powered Practice Assistant</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-tooth logo-icon"></i>
+                <span class="logo-text">SmileBright <span class="highlight">Dental</span></span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="tel:(512)555-0100" class="nav-phone"><i class="fa-solid fa-phone"></i> (512) 555-0100</a>
+                <button class="btn btn-primary demo-trigger">Book Demo</button>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Next-Gen Dental Practice Automation</span>
+                    <h1>Never Miss a Patient Call Again</h1>
+                    <p class="subheadline">AI-powered chatbot that answers questions, qualifies leads, and books appointments 24/7. Elevate your practice, increase bookings, and keep your chairs full.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-lg demo-trigger">Book a Free Demo</button>
+                        <a href="#features" class="btn btn-secondary btn-lg">Learn More</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p>Trusted by Austin's leading dental practices</p>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="chatbot-preview-container">
+                        <div class="chat-header-preview">
+                            <div class="chat-dot green-dot"></div>
+                            <span class="chat-title-preview">SmileBright Assistant</span>
+                        </div>
+                        <div class="chat-body-preview">
+                            <div class="preview-msg bot">
+                                <span class="avatar-preview"><i class="fa-solid fa-user-doctor"></i></span>
+                                <div class="msg-bubble-preview">Hi! Welcome to SmileBright Dental. How can we help your smile today?</div>
+                            </div>
+                            <div class="preview-msg user">
+                                <div class="msg-bubble-preview">Hi, how much is emergency dental care and standard teeth whitening?</div>
+                                <span class="avatar-preview user-avatar"><i class="fa-solid fa-user"></i></span>
+                            </div>
+                            <div class="preview-msg bot">
+                                <span class="avatar-preview"><i class="fa-solid fa-user-doctor"></i></span>
+                                <div class="msg-bubble-preview">For after-hours emergency pain, call (512) 555-0123. Teeth whitening packages start at $299! Would you like to schedule an appointment?</div>
+                            </div>
+                        </div>
+                        <div class="chat-footer-preview">
+                            <div class="input-preview-bar">
+                                <span>Yes, I'd like to book...</span>
+                                <i class="fa-solid fa-paper-plane send-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Designed for Modern Clinics</span>
+                    <h2>Key AI Capabilities</h2>
+                    <p class="section-desc">Streamline patient intake and inquiries so your front-desk staff can focus on the patients in the clinic.</p>
+                </div>
+                <div class="features-grid">
+                    <!-- Feature 1: 24/7 Availability -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <h3>24/7 Availability</h3>
+                        <p>Patients search for dentists after office hours. Our AI replies instantly late at night, on weekends, and during holidays.</p>
+                    </div>
+                    <!-- Feature 2: Instant Response -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-bolt-lightning"></i>
+                        </div>
+                        <h3>Instant Response</h3>
+                        <p>No waiting on hold. The chatbot replies in under a second, answering simple FAQs and keeping potential patients engaged.</p>
+                    </div>
+                    <!-- Feature 3: Lead Qualification -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-filter"></i>
+                        </div>
+                        <h3>Lead Qualification</h3>
+                        <p>Determines if a visitor is a new patient, checks dental insurance, and gathers key details before they book.</p>
+                    </div>
+                    <!-- Feature 4: Appointment Booking -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </div>
+                        <h3>Appointment Booking</h3>
+                        <p>Allows patients to submit booking requests directly inside the chat interface, which flows straight to your scheduler.</p>
+                    </div>
+                    <!-- Feature 5: FAQ Automation -->
+                    <div class="feature-card feature-wide">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-regular fa-comments"></i>
+                        </div>
+                        <h3>FAQ Automation</h3>
+                        <p>Instantly answers questions regarding clinic service lists, insurance policies, office hours, pricing estimates, financing options, and parking details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Simple & Flexible Pricing</span>
+                    <h2>Affordable Practice Automation</h2>
+                    <p class="section-desc">Get premium AI capabilities for a fraction of the cost of a full-time receptionist.</p>
+                </div>
+                <div class="pricing-card-wrapper">
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Popular Choice</div>
+                        <h3>Practice Builder</h3>
+                        <div class="price-display">
+                            <span class="currency">$</span>
+                            <span class="amount">300</span>
+                            <span class="term">/month</span>
+                        </div>
+                        <p class="pricing-subtitle">Everything you need to automate patient booking and support.</p>
+                        <hr class="pricing-divider">
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>24/7</strong> Intelligent Dental Chatbot</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Advanced HTML Form Booking Setup</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Customized FAQ and Service training</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Responsive widget (Desktop & Mobile)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> SMS/Email immediate booking alerts</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Encrypted patient data capture</li>
+                        </ul>
+                        <button class="btn btn-primary btn-block demo-trigger">Book a Free Demo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Social Proof</span>
+                    <h2>What Our Partners Say</h2>
+                    <p class="section-desc">SmileBright Dental's automated assistant helps practices throughout Texas capture leads and secure satisfied clients.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="quote">"Installing this chatbot on our website was a game-changer. We've seen a 35% increase in after-hours appointment requests, and our team saves hours weekly on repeating simple pricing details."</p>
+                        <div class="author-info">
+                            <div class="author-details">
+                                <h4 class="author-name">Dr. Sarah Jenkins, DDS</h4>
+                                <p class="author-title">Owner, Jenkins Family Dentistry</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="quote">"Our patients absolutely love the quick replies. Many work during our business hours, so being able to schedule an orthodontics check-up or confirm insurance coverage at 9 PM is perfect."</p>
+                        <div class="author-info">
+                            <div class="author-details">
+                                <h4 class="author-name">Michael Chang</h4>
+                                <p class="author-title">Practice Manager, Austin Elite Orthodontics</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="quote">"We used to miss dozen of calls over the weekend that would end up going to competitors. Now, the AI chatbot qualifies the lead and takes their info instantly. Highly recommend!"</p>
+                        <div class="author-info">
+                            <div class="author-details">
+                                <h4 class="author-name">Amanda Rodriguez</h4>
+                                <p class="author-title">Operations Director, BrightSmile Dental Group</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-banner">
+            <div class="container container-sm text-center">
+                <h2>Ready to Keep Your Dental Chairs Full?</h2>
+                <p>Try SmileBright Dental's intelligent chatbot today. Let us show you how we capture leads and handle scheduling automatically, with zero code or setup hassle for your clinic staff.</p>
+                <button class="btn btn-accent btn-lg demo-trigger">Book a Free Demo</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <i class="fa-solid fa-tooth logo-icon"></i>
+                    <span>SmileBright <span class="highlight">Dental</span></span>
+                </a>
+                <p class="footer-desc">Providing modern dental solutions and cutting-edge automation for seamless patient services in Austin, TX.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#testimonials">Testimonials</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact details</h4>
+                <p><i class="fa-solid fa-map-marker-alt"></i> 123 Main Street, Austin, TX 78701</p>
+                <p><i class="fa-solid fa-phone"></i> Direct: <a href="tel:(512)555-0100">(512) 555-0100</a></p>
+                <p><i class="fa-solid fa-ambulance"></i> Emergency: <a href="tel:(512)555-0123">(512) 555-0123</a></p>
+                <p><i class="fa-regular fa-envelope"></i> email: <a href="mailto:info@smilebrightdental.com">info@smilebrightdental.com</a></p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SmileBright Dental Clinic. All rights reserved. Built as an AI Landing Page Demo.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <!-- Floating Chat Bubble Button -->
+        <button id="chat-toggle-btn" class="chat-toggle-btn" aria-label="Open chat assistant">
+            <i class="fa-solid fa-comments bubble-icon"></i>
+            <i class="fa-solid fa-xmark close-icon hidden"></i>
+            <span class="notification-badge">1</span>
+        </button>
+
+        <!-- Chat Window Outer Container -->
+        <div id="chat-container" class="chat-container hidden-chat">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-doctor-status">
+                    <div class="avatar-wrapper">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <span class="status-indicator-dot"></span>
+                    </div>
+                    <div class="doctor-details">
+                        <h4>SmileBright Assistant</h4>
+                        <p><span class="status-pulse"></span> Online | Ready to help</p>
+                    </div>
+                </div>
+                <button id="chat-close-btn" class="chat-header-close-btn" aria-label="Close chat window">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+            </div>
+
+            <!-- Chat Message List Wrapper -->
+            <div class="chat-messages-wrapper">
+                <div id="chat-messages" class="chat-messages">
+                    <!-- Messages will be injected by JavaScript -->
+                </div>
+
+                <!-- Bouncing Typing Indicator (hidden by default) -->
+                <div id="typing-indicator" class="typing-indicator-container hidden">
+                    <span class="avatar-indicator"><i class="fa-solid fa-user-doctor"></i></span>
+                    <div class="typing-bubble">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Form Panel (embedded overlay inside chat; initially hidden) -->
+            <div id="booking-form-overlay" class="booking-form-overlay hidden">
+                <div class="booking-form-header">
+                    <h4>Book Appointment</h4>
+                    <button id="close-booking-form" class="close-booking-btn" aria-label="Close booking form">&times;</button>
+                </div>
+                <form id="appointment-form" class="booking-form">
+                    <div class="form-group">
+                        <label for="patient-name">Full Name *</label>
+                        <input type="text" id="patient-name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="patient-phone">Phone Number *</label>
+                        <input type="tel" id="patient-phone" required placeholder="(512) 555-0100">
+                    </div>
+                    <div class="form-group">
+                        <label for="patient-email">Email Address *</label>
+                        <input type="email" id="patient-email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="preferred-date">Preferred Date *</label>
+                            <input type="date" id="preferred-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service-needed">Service Needed *</label>
+                            <select id="service-needed" required>
+                                <option value="" disabled selected>Select service</option>
+                                <option value="cleaning">Cleaning</option>
+                                <option value="checkup">Checkup</option>
+                                <option value="emergency">Emergency</option>
+                                <option value="cosmetic">Cosmetic</option>
+                                <option value="orthodontics">Orthodontics</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-accent btn-block submit-booking-btn">Request Bookings</button>
+                </form>
+            </div>
+
+            <!-- Chat Footer Action Input Fields -->
+            <div class="chat-input-area" id="chat-input-area">
+                <div id="quick-replies" class="quick-replies">
+                    <button class="quick-reply-btn" data-trigger="services">Services</button>
+                    <button class="quick-reply-btn" data-trigger="hours">Hours</button>
+                    <button class="quick-reply-btn" data-trigger="book">Book Appointment</button>
+                </div>
+                <div class="input-form">
+                    <input type="text" id="chat-input" placeholder="Type a message..." aria-label="Type message here">
+                    <button id="chat-send-btn" class="chat-send-btn" aria-label="Send message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="chatbot.js"></script>
+</body>
+</html>
