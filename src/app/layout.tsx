@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -57,15 +58,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased font-sans`}
-    >
-      <body className="min-h-full flex flex-col bg-background text-foreground antialiased selection:bg-primary/20">
-        <Navbar />
-        <main className="flex-1 flex flex-col w-full">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html
+        lang="en"
+        className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased font-sans`}
+      >
+        <body className="min-h-full flex flex-col bg-background text-foreground antialiased selection:bg-primary/20">
+          <Navbar />
+          <main className="flex-1 flex flex-col w-full">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

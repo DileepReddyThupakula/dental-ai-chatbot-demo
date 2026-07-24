@@ -1,0 +1,143 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Clinic {
+  id                String                   @id @default(uuid())
+  name              String
+  slug              String                   @unique
+  address           String?
+  phone             String?
+  operatingHours    Json?                    // Store daily working hours, e.g. { "monday": { "open": "08:00", "close": "17:00" }, ... }
+  timezone          String                   @default("America/New_York")
+  licenseKey        String?                  @unique
+  pmsType           String?                  // e.g. "DENTRIX", "EAGLESOFT", "OPENDENTAL"
+  pmsApiEndpoint    String?
+  pmsSyncStatus     String                   @default("DISCONNECTED") // "DISCONNECTED", "CONNECTED", "SYNC_ERROR"
+  createdAt         DateTime                 @default(now())
+  updatedAt         DateTime                 @updatedAt
+
+  users             User[]
+  assistantSettings AssistantSettings?
+  conversations     Conversation[]
+  appointments      AppointmentReservation[]
+}
+
+model User {
+  id          String   @id @default(uuid())
+  clerkId     String   @unique // Link to Clerk Authentication token
+  email       String   @unique
+  firstName   String?
+  lastName    String?
+  role        UserRole @default(OFFICE_MANAGER)
+  clinicId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  clinic      Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+}
+
+enum UserRole {
+  CLINIC_OWNER
+  OFFICE_MANAGER
+  RECEPTIONIST
+  ADMIN
+}
+
+model AssistantSettings {
+  id                 String   @id @default(uuid())
+  clinicId           String   @unique
+  isActive           Boolean  @default(true)
+  systemPrompt       String   @db.Text
+  voiceModel         String   @default("openai-gpt-4o-audio") // standard high-fidelity voice model
+  widgetColor        String   @default("#0f766e") // default teal primary color
+  intakeRequirements Json?    // JSON of fields to collect e.g. { "insurance": true, "reason": true }
+  temperature        Float    @default(0.2)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  clinic             Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+}
+
+model Conversation {
+  id             String             @id @default(uuid())
+  clinicId       String
+  patientPhone   String?
+  patientEmail   String?
+  patientName    String?
+  channel        ChannelType        @default(WEB_WIDGET)
+  status         ConversationStatus @default(ACTIVE)
+  summary        String?            @db.Text
+  hipaaCleaned   Boolean            @default(true)
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+
+  clinic         Clinic             @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+  messages       Message[]
+  appointments   AppointmentReservation[]
+}
+
+enum ChannelType {
+  WEB_WIDGET
+  SMS
+  VOICE_CALL
+}
+
+enum ConversationStatus {
+  ACTIVE
+  PAUSED_FOR_AGENT
+  RESOLVED
+  NEEDS_FOLLOW_UP
+}
+
+model Message {
+  id             String   @id @default(uuid())
+  conversationId String
+  sender         Sender   @default(PATIENT)
+  content        String   @db.Text
+  createdAt      DateTime @default(now())
+
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+}
+
+enum Sender {
+  PATIENT
+  AI_ASSISTANT
+  HUMAN_OPERATOR
+}
+
+model AppointmentReservation {
+  id               String      @id @default(uuid())
+  clinicId         String
+  conversationId   String?
+  patientName      String
+  patientPhone     String
+  patientEmail     String
+  insuranceCarrier String?
+  insuranceMemberId String?
+  appointmentTime  DateTime
+  reasonForVisit   String?
+  syncStatus       SyncStatus  @default(PENDING) // PENDING, SYNCED, FAILED
+  pmsAppointmentId String?     // ID returned by Dentrix/Eaglesoft once database synced
+  rawPMSResponse   Json?       // Save raw integration payload for logging
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  clinic           Clinic      @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+  conversation     Conversation? @relation(fields: [conversationId], references: [id], onDelete: SetNull)
+}
+
+enum SyncStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  MANUAL_RESOLVE_REQUIRED
+}

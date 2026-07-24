@@ -1,9 +1,23 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MapPin, Phone, Mail, Sparkles } from "lucide-react";
 
 export default function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  // Hide Footer in SaaS dashboard and authentication screens
+  if (
+    pathname &&
+    (pathname.startsWith("/dashboard") ||
+      pathname.startsWith("/sign-in") ||
+      pathname.startsWith("/sign-up"))
+  ) {
+    return null;
+  }
 
   return (
     <footer className="bg-secondary/40 border-t border-border/80">

@@ -22,6 +22,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Hide Navbar in SaaS dashboard and authentication screens
+  if (
+    pathname &&
+    (pathname.startsWith("/dashboard") ||
+      pathname.startsWith("/sign-in") ||
+      pathname.startsWith("/sign-up"))
+  ) {
+    return null;
+  }
+
   const navLinks = [
     { label: "Features", href: "/features" },
     { label: "Pricing", href: "/pricing" },
