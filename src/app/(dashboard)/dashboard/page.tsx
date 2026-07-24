@@ -149,10 +149,10 @@ export default function DashboardOverview() {
           <span>Practice Insights Live Feed</span>
         </div>
         <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white">
-          Good morning, {metrics?.clinicName || "SmileBright Team"}
+          Good morning, {metrics?.clinicName || "Clinic Team"}
         </h1>
         <p className="text-sm text-slate-400">
-          Anvora AI has handled {metrics?.pendingBookings ? metrics.pendingBookings * 11 : 44} inquiries after-hours.
+          Anvora AI has handled {metrics?.totalConversations || 0} inquiries after-hours.
         </p>
       </div>
 

@@ -14,11 +14,11 @@ import {
 } from "lucide-react";
 
 export default function PracticeSettings() {
-  const [clinicName, setClinicName] = useState("SmileBright Dental Practice");
-  const [clinicPhone, setClinicPhone] = useState("(555) 019-9200");
+  const [clinicName, setClinicName] = useState("");
+  const [clinicPhone, setClinicPhone] = useState("");
   const [pmsType, setPmsType] = useState("DENTRIX");
-  const [pmsEndpoint, setPmsEndpoint] = useState("https://local-connector.smilebright.com:8443/v1");
-  const [licenseKey, setLicenseKey] = useState("SB-CLINIC-99023-X");
+  const [pmsEndpoint, setPmsEndpoint] = useState("");
+  const [licenseKey, setLicenseKey] = useState("");
   const [isTestingSync, setIsTestingSync] = useState(false);
   const [testResult, setTestResult] = useState<"IDLE" | "SUCCESS" | "ERROR">("SUCCESS");
   const [loading, setLoading] = useState(true);

@@ -30,11 +30,10 @@ export async function GET() {
       },
     });
 
-    // Seeding base offset if the clinic database has no records yet.
-    // This allows active testing visuals while capturing new records instantly.
-    const conversationsCount = totalConversations > 0 ? totalConversations : 2481;
-    const bookingsCount = totalSyncedBookings > 0 ? totalSyncedBookings : 142;
-    const pendingCount = pendingBookings > 0 ? pendingBookings : 4;
+    // Return true database row counts
+    const conversationsCount = totalConversations;
+    const bookingsCount = totalSyncedBookings;
+    const pendingCount = pendingBookings;
 
     const hoursSavedVal = Number(((conversationsCount * 2.5 + bookingsCount * 15) / 60).toFixed(1));
 

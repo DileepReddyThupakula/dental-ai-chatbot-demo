@@ -108,15 +108,31 @@ export default function ContactPage() {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormLoading(true);
-    // Simulate API fetch delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setFormLoading(false);
-    setFormSubmitted(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setFormSubmitted(true);
+      } else {
+        const data = await res.json();
+        setSubmitError(data.error || "Failed to submit inquiry. Please try again.");
+      }
+    } catch (err) {
+      console.error("Submission failed:", err);
+      setSubmitError("Network connection error. Please try again.");
+    } finally {
+      setFormLoading(false);
+    }
   };
 
   const handleReset = () => {
@@ -304,6 +320,12 @@ export default function ContactPage() {
                           className="w-full px-4 py-3 rounded-xl border border-white/5 bg-slate-900/60 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all resize-none"
                         />
                       </div>
+
+                      {submitError && (
+                        <div className="text-xs font-semibold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-4 py-2.5 rounded-xl font-sans">
+                          {submitError}
+                        </div>
+                      )}
 
                       {/* Submit Button */}
                       <button

@@ -18,9 +18,10 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://anvora.ai"),
   title: "Anvora | AI Receptionist for Dental Practices",
   description:
-    "Anvora provides AI Receptionists that help dental practices capture more appointments, answer patient questions, and automate front desk conversations 24/7. Intelligence That Never Sleeps.",
+    "Anvora provides High-Fidelity AI Receptionists that help dental practices capture more appointments, answer patient FAQs, verify PPO insurance eligibility, and schedule directly into Dentrix, Eaglesoft, and Open Dental 24/7.",
   keywords: [
     "Anvora",
     "AI receptionist",
@@ -30,22 +31,39 @@ export const metadata: Metadata = {
     "dental practice automation",
     "dental clinic chat bot",
     "virtual front desk",
+    "Dentrix integration",
+    "Eaglesoft integration",
+    "Open Dental integration",
+    "PPO insurance verification AI"
   ],
-  authors: [{ name: "Anvora" }],
+  authors: [{ name: "Anvora Team", url: "https://anvora.ai" }],
+  alternates: {
+    canonical: "https://anvora.ai",
+  },
   openGraph: {
     title: "Anvora | AI Receptionist for Dental Practices",
     description:
-      "Anvora provides AI Receptionists that help dental practices capture more appointments, answer patient questions, and automate front desk conversations 24/7.",
+      "Anvora's AI Receptionist answers patient inquiries, verifies PPO insurance, and schedules calendar appointments directly into your PMS — operating 24/7 to automate your front desk.",
     url: "https://anvora.ai",
     siteName: "Anvora",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Anvora AI Practice Automation Sidebar Widget Preview",
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Anvora | AI Receptionist for Dental Practices",
     description:
-      "Anvora provides AI Receptionists that help dental practices capture more appointments, answer patient questions, and automate front desk conversations 24/7.",
+      "Anvora's AI Receptionist answers patient inquiries, verifies PPO insurance, and schedules calendar appointments directly into your PMS — operating 24/7 to automate your front desk.",
+    creator: "@anvora_ai",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/favicon.ico",

@@ -87,19 +87,19 @@ export default function Footer() {
               <li className="flex items-center gap-2.5 text-sm text-foreground/80">
                 <Phone className="h-4.5 w-4.5 text-primary shrink-0" />
                 <div>
-                  Direct:{" "}
-                  <a href="tel:8005550199" className="hover:text-primary transition-colors">
-                    (800) 555-0199
-                  </a>
+                  Direct Hotline:{" "}
+                  <Link href="/contact" className="hover:text-primary transition-colors font-medium">
+                    Contact Sales Desk
+                  </Link>
                 </div>
               </li>
               <li className="flex items-center gap-2.5 text-sm text-foreground/80">
                 <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shrink-0 mr-1 ml-1"></span>
                 <div>
-                  Support:{" "}
-                  <a href="tel:8005550195" className="hover:text-primary font-medium hover:underline">
-                    (800) 555-0195
-                  </a>
+                  Help Center:{" "}
+                  <Link href="/contact" className="hover:text-primary font-medium hover:underline">
+                    Submit Support Ticket
+                  </Link>
                 </div>
               </li>
               <li className="flex items-center gap-2.5 text-sm text-foreground/80">

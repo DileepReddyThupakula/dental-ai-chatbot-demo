@@ -96,7 +96,7 @@ export default function Home() {
   const [demoMessages, setDemoMessages] = useState<Array<{ sender: "patient" | "ai"; text: string }>>([
     {
       sender: "ai",
-      text: "Hi! Welcome to SmileBright Dental. I'm your virtual front desk assistant. 🦷 How can I help you today?"
+      text: "Hi! Welcome to our practice. I'm your virtual front desk assistant. 🦷 How can I help you today?"
     }
   ]);
   const [demoStep, setDemoStep] = useState(0);
@@ -134,7 +134,7 @@ export default function Home() {
     setDemoMessages([
       {
         sender: "ai",
-        text: "Hi! Welcome to SmileBright Dental. I'm your virtual front desk assistant. 🦷 How can I help you today?"
+        text: "Hi! Welcome to our practice. I'm your virtual front desk assistant. 🦷 How can I help you today?"
       }
     ]);
     setDemoStep(0);

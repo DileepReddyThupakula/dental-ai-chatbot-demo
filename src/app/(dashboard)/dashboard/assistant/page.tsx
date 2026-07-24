@@ -15,7 +15,7 @@ export default function AssistantSettings() {
   const [voiceModel, setVoiceModel] = useState("openai-gpt-4o-audio");
   const [widgetColor, setWidgetColor] = useState("#0f766e");
   const [systemPrompt, setSystemPrompt] = useState(
-    "You are a friendly Virtual Dental Assistant for SmileBright Dental Practice. Your core goals are: 1. Qualify and collect patient details (name, email, phone). 2. Answer practice FAQs (hours, address). 3. Identify appointments openings and sync bookings to the calendar."
+    "You are a friendly Virtual Dental Assistant for our dental practice. Your core goals are: 1. Qualify and collect patient details (name, email, phone). 2. Answer practice FAQs (hours, address). 3. Identify appointments openings and sync bookings to the calendar."
   );
   const [collectInsurance, setCollectInsurance] = useState(true);
   const [collectReason, setCollectReason] = useState(true);

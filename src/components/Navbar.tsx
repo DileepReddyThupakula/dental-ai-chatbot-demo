@@ -80,15 +80,15 @@ export default function Navbar() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-6">
-            <a
-              href="tel:8005550199"
-              className="flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200"
+            <Link
+              href="/contact"
+              className="flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-205"
             >
               <span className="p-1.5 rounded-lg bg-secondary text-primary">
                 <Phone className="h-4 w-4" />
               </span>
-              (800) 555-0199
-            </a>
+              Contact Us
+            </Link>
             <Link
               href="/demo"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/95 shadow-md shadow-primary/20 hover:shadow-lg transition-all duration-300"
@@ -136,13 +136,14 @@ export default function Navbar() {
           })}
           <hr className="border-border/60 my-2" />
           <div className="flex flex-col gap-3 px-4 pt-1 pb-2">
-            <a
-              href="tel:8005550199"
-              className="flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200"
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-205"
             >
               <Phone className="h-4 w-4 text-primary" />
-              (800) 555-0199
-            </a>
+              Contact Us
+            </Link>
             <Link
               href="/demo"
               onClick={() => setIsOpen(false)}
