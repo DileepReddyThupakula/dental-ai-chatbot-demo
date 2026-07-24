@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SmileBright Dental - Chatbot Logic
+   Anvora Dental - Chatbot Logic
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const KNOWLEDGE_BASE = {
         greetings: {
             keywords: ['hello', 'hi', 'hey', 'greetings', 'hola', 'morning', 'afternoon', 'evening'],
-            response: "Hi there! Welcome to SmileBright Dental. I'm your virtual assistant. How can I help you today?"
+            response: "Hi there! Welcome to Anvora Dental. I'm your virtual assistant. How can I help you today?"
         },
         bye: {
             keywords: ['bye', 'goodbye', 'see you', 'thanks', 'thank you', 'awesome', 'great', 'perfect', 'cool'],
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         services: {
             keywords: ['service', 'services', 'offer', 'treatment', 'treatments', 'do you do', 'cleaning', 'checkup', 'filling', 'whitening', 'cosmetic', 'ortho', 'braces', 'extraction', 'root canal'],
-            response: "At SmileBright Dental, we offer a comprehensive range of family and cosmetic dentistry, including:\n\n" +
+            response: "At Anvora Dental, we offer a comprehensive range of family and cosmetic dentistry, including:\n\n" +
                       "• <strong>Routine Cleanings & Exams</strong> (preventative hygiene)\n" +
                       "• <strong>Teeth Whitening</strong> (in-office and take-home treatments)\n" +
                       "• <strong>Cosmetic Veneers & Bonding</strong>\n" +
